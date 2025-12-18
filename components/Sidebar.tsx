@@ -334,7 +334,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                         }`}
                       >
                         <span suppressHydrationWarning>
-                          {initialLanguage === 'ta' ? 'வரலாறு' : 'History'}
+                          {initialLanguage === 'ta' ? 'மாற்றங்கள்' : 'Changes'}
                         </span>
                       </a>
                     </li>
