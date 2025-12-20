@@ -283,7 +283,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                 {/* Expand/Collapse Button */}
                 <button
                   onClick={allExpanded ? collapseAll : expandAll}
-                  className="cursor-pointer text-sm px-2 py-2 hover:text-white underline-offset-7 hover:underline transition-colors"
+                  className="cursor-pointer text-sm px-2 py-2 text-gray-300 hover:text-white underline-offset-7 hover:underline transition-colors"
                 >
                   <span>
                     {allExpanded 
