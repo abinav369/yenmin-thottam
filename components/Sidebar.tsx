@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo, useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import type { ContentItem } from "@/lib/getContent";
 import { useLanguage } from "./LanguageContext";
 
@@ -48,7 +49,7 @@ function RenderItems({
               {/* TREE HORIZONTAL LINE FOR FILES */}
               <div className="absolute left-0 top-1/2 w-2 h-px bg-gray-500" style={{ marginLeft: '-0.5rem' }}></div>
 
-              <a
+              <Link
                 href={href}
                 className={`block pl-3 ${
                   isActive
@@ -59,7 +60,7 @@ function RenderItems({
                 <span suppressHydrationWarning>
                   {item.displayName?.[initialLanguage] || item.name}
                 </span>
-              </a>
+              </Link>
             </li>
           );
         } else {
@@ -282,7 +283,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                 {/* Expand/Collapse Button */}
                 <button
                   onClick={allExpanded ? collapseAll : expandAll}
-                  className="cursor-pointer text-sm px-2 py-2 text-gray-300 hover:text-white underline-offset-7 hover:underline transition-colors"
+                  className="cursor-pointer text-sm px-2 py-2 hover:text-white underline-offset-7 hover:underline transition-colors"
                 >
                   <span>
                     {allExpanded 
@@ -304,7 +305,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                   
                   return (
                     <li key="intro" className="mb-4">
-                      <a
+                      <Link
                         href="/"
                         className={`block text-lg ${
                           isActive 
@@ -315,7 +316,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                         <span>
                           {initialLanguage === 'ta' ? 'அறிமுகம்' : 'Introduction'}
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   );
                 }
@@ -325,7 +326,7 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                   
                   return (
                     <li key="history" className="mb-4">
-                      <a
+                      <Link
                         href="/history"
                         className={`block text-lg ${
                           isActive 
@@ -334,9 +335,9 @@ export default function Sidebar({ data, initialLanguage = 'ta', children }: Side
                         }`}
                       >
                         <span suppressHydrationWarning>
-                          {initialLanguage === 'ta' ? 'மாற்றங்கள்' : 'Changes'}
+                          {initialLanguage === 'ta' ? 'வரலாறு' : 'History'}
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   );
                 }
